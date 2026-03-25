@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body onload="loadUserDashboard()">
+  <div class="dashboard">
+    <aside class="sidebar">
+      <h2>User Panel</h2>
+      <a href="index.html">Home</a>
+      <a href="events.html">Browse Events</a>
+      <a href="user-dashboard.html">My Dashboard</a>
+      <button onclick="logout()">Logout</button>
+    </aside>
+
+    <main class="main-content">
+      <div class="topbar">
+        <h2 id="userWelcome">Welcome</h2>
+      </div>
+
+      <div id="userMsg"></div>
+
+      <section class="dashboard-section">
+        <div class="card">
+          <h3>Event Registration Form</h3>
+          <p id="selectedEventInfo" style="margin: 10px 0; color:#64748b;"></p>
+
+          <form id="registrationForm" class="inline-form" onsubmit="submitEventRegistration(event)">
+            <div class="input-group">
+              <label>Name</label>
+              <input type="text" id="regName" required />
+            </div>
+
+            <div class="input-group">
+              <label>Email</label>
+              <input type="email" id="regEmail" required />
+            </div>
+
+            <div class="input-group">
+              <label>Phone</label>
+              <input type="text" id="regPhone" required />
+            </div>
+
+            <div class="input-group">
+              <label>College / Department</label>
+              <input type="text" id="regCollege" required />
+            </div>
+
+            <div class="full-width">
+              <button type="submit" class="btn btn-primary">Register for Selected Event</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="dashboard-section">
+        <h3>My Registrations</h3>
+        <div id="myRegistrations" class="grid grid-2"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

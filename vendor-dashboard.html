@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vendor Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body onload="loadVendorDashboard()">
+  <div class="dashboard">
+    <aside class="sidebar">
+      <h2>Vendor Panel</h2>
+      <a href="vendor-dashboard.html">Dashboard</a>
+      <a href="events.html">View Public Events</a>
+      <button onclick="logout()">Logout</button>
+    </aside>
+
+    <main class="main-content">
+      <div class="topbar">
+        <h2 id="vendorWelcome">Welcome</h2>
+      </div>
+
+      <div id="vendorMsg"></div>
+
+      <section class="dashboard-section">
+        <div class="card">
+          <h3>Add Location</h3>
+          <form id="locationForm" class="inline-form" onsubmit="addVendorLocation(event)">
+            <div class="input-group">
+              <label>Location Name</label>
+              <input type="text" id="locationName" required />
+            </div>
+
+            <div class="input-group">
+              <label>Address</label>
+              <input type="text" id="locationAddress" required />
+            </div>
+
+            <div class="input-group">
+              <label>City</label>
+              <input type="text" id="locationCity" required />
+            </div>
+
+            <div class="input-group">
+              <label>State</label>
+              <input type="text" id="locationState" required />
+            </div>
+
+            <div class="input-group">
+              <label>Pincode</label>
+              <input type="text" id="locationPincode" required />
+            </div>
+
+            <div class="input-group">
+              <label>Capacity</label>
+              <input type="number" id="locationCapacity" required />
+            </div>
+
+            <div class="full-width">
+              <button type="submit" class="btn btn-primary">Add Location</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="dashboard-section">
+        <div class="card">
+          <h3>Create Event</h3>
+          <form id="vendorEventForm" class="inline-form" onsubmit="createVendorEvent(event)">
+            <div class="input-group">
+              <label>Event Title</label>
+              <input type="text" id="eventTitle" required />
+            </div>
+
+            <div class="input-group">
+              <label>Category</label>
+              <input type="text" id="eventCategory" required />
+            </div>
+
+            <div class="input-group">
+              <label>Date</label>
+              <input type="date" id="eventDate" required />
+            </div>
+
+            <div class="input-group">
+              <label>Time</label>
+              <input type="time" id="eventTime" required />
+            </div>
+
+            <div class="input-group">
+              <label>Venue</label>
+              <input type="text" id="eventVenue" required />
+            </div>
+
+            <div class="input-group">
+              <label>Address</label>
+              <input type="text" id="eventAddress" required />
+            </div>
+
+            <div class="input-group">
+              <label>Total Seats</label>
+              <input type="number" id="eventSeats" required />
+            </div>
+
+            <div class="input-group">
+              <label>Banner URL</label>
+              <input type="text" id="eventBanner" placeholder="Optional image URL" />
+            </div>
+
+            <div class="input-group full-width">
+              <label>Description</label>
+              <textarea id="eventDescription" required></textarea>
+            </div>
+
+            <div class="full-width">
+              <button type="submit" class="btn btn-primary">Create Event</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="dashboard-section">
+        <h3>My Locations</h3>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Location</th>
+                <th>Address</th>
+                <th>Capacity</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="vendorLocationsTable"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="dashboard-section">
+        <h3>My Events</h3>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Event</th>
+                <th>Date</th>
+                <th>Venue</th>
+                <th>Seats</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="vendorEventsTable"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
